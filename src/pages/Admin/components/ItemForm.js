@@ -1,12 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ItemForm = ({ model, fullName, image, details }) => {
 
     const [editMode, setEditMode] = useState(false)
     const [formValue, setFormValue] = useState(null)
-
-    const modelName = useRef('')
-    const shoeFullName = useRef('')
 
     useEffect(() => {
         setFormValue((prev) => prev = {
@@ -16,6 +13,7 @@ const ItemForm = ({ model, fullName, image, details }) => {
             details: details,
             price: 0
         })
+        //eslint-disable-next-line
     }, [])
 
     useEffect(() => {
@@ -36,7 +34,7 @@ const ItemForm = ({ model, fullName, image, details }) => {
         const fullName = formElements.fullName.value;
         const price = formElements.price.value;
         const details = [formElements.detail0.value, formElements.detail1.value, formElements.detail2.value, formElements.detail3.value, formElements.detail4.value]
-
+        //eslint-disable-next-line
         const newShoe = {
             model: model,
             fullName: fullName,

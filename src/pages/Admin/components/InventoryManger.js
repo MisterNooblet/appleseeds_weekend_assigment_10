@@ -32,6 +32,7 @@ const InventoryManger = () => {
 
     useEffect(() => {
         getData()
+        //eslint-disable-next-line
     }, [])
 
 
