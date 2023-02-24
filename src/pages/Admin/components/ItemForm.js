@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const ItemForm = ({ model, fullName, image, details }) => {
 
     const [editMode, setEditMode] = useState(false)
     const [formValue, setFormValue] = useState(null)
+
+    const modelName = useRef('')
+    const shoeFullName = useRef('')
 
     useEffect(() => {
         setFormValue((prev) => prev = {
@@ -16,13 +19,14 @@ const ItemForm = ({ model, fullName, image, details }) => {
     }, [])
 
     useEffect(() => {
-        setFormValue((prev) => prev = {
+        setFormValue({
             model: model,
             fullName: fullName,
             image: image,
             details: details,
             price: 0
         })
+
     }, [model, fullName, image, details])
 
     const handleSubmit = (e) => {
@@ -32,34 +36,35 @@ const ItemForm = ({ model, fullName, image, details }) => {
         const fullName = formElements.fullName.value;
         const price = formElements.price.value;
         const details = [formElements.detail0.value, formElements.detail1.value, formElements.detail2.value, formElements.detail3.value, formElements.detail4.value]
+
+        const newShoe = {
+            model: model,
+            fullName: fullName,
+            price: price,
+            details: details,
+            image: image
+        }
+
     }
 
-    const handleChange = (e) => {
-        const key = e.target.id
-        console.log(key);
-        setFormValue((prev) => prev = {
-            ...prev,
-            [key]: e.target.value
-        })
-    }
 
     if (formValue) {
         return (
-            <form className='flex-col' onChange={(e) => handleChange(e)} onSubmit={(e) => { handleSubmit(e) }}>
+            <form className='flex-col' onSubmit={(e) => { handleSubmit(e) }}>
                 <label htmlFor='model'>{formValue.model}</label>
-                {/* {editMode && <input type='text' name='model' id='model' value={editMode && formValue.model} />} */}
+                {editMode && <input type='text' name='model' id='model' value={formValue.model} onChange={(e) => setFormValue({ ...formValue, model: e.target.value })} />}
                 <label htmlFor='fullName'>{formValue.fullName}</label>
-                {/* {editMode && <input type='text' name='fullName' id='fullName' value={editMode && formValue.fullName} />} */}
+                {editMode && <input type='text' name='fullName' id='fullName' value={formValue.fullName} onChange={(e) => setFormValue({ ...formValue, fullName: e.target.value })} />}
                 <img src={image} alt={fullName} />
                 <label htmlFor='price'>Price:</label>
-                <input type='number' name='price' id='price' autoFocus value={formValue.price} min={1} />
+                <input type='number' name='price' id='price' autoFocus value={formValue.price} onChange={(e) => setFormValue({ ...formValue, price: e.target.value })} min={1} />
                 <label htmlFor='details'>{'Details:'}</label>
                 <ul>
                     {details.map(detail => <li key={Math.random()}>{detail}</li>)}
                 </ul>
-                {/* {editMode && <ul className='flex-col'>{details.map((detail, idx) => <input id={`detail${idx}`} value={detail} key={Math.random()} />)}</ul>} */}
+                {editMode && <ul className='flex-col'>{formValue.details.map((detail, idx) => <input id={`detail${idx}`} defaultValue={detail} key={Math.random()} />)}</ul>}
                 <div className='form-btns'>
-                    {/* <button type='button' onClick={() => { setEditMode(true) }}>EDIT DETAILS</button> */}
+                    <button type='button' onClick={() => { setEditMode(!editMode) }}>EDIT DETAILS</button>
                     <button type='submit'>ADD ITEM</button>
 
                 </div>
