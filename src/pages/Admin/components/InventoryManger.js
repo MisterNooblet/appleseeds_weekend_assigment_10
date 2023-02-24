@@ -10,6 +10,7 @@ const InventoryManger = () => {
     const [models, setModels] = useState(null)
     const [selectedBrand, setSelectedBrand] = useState(null)
     const [selectedModel, setSelectedModel] = useState(null)
+    const [brandName, setBrandName] = useState(null)
 
     const model = useRef(null)
 
@@ -22,6 +23,7 @@ const InventoryManger = () => {
             setBrands((prev) => prev = resultBrands)
             setSelectedBrand((prev) => prev = initialBrand)
             setSelectedModel((prev) => prev = initialBrand[0])
+            setBrandName((prev) => prev = resultBrands[0])
             console.log(selectedModel);
         } catch (error) {
 
@@ -42,6 +44,7 @@ const InventoryManger = () => {
         const name = brand.toLowerCase().split(' ').join('')
         setSelectedBrand((prev) => prev = models[name])
         setSelectedModel((prev) => prev = models[name][0])
+        setBrandName(brand)
     }
 
     const selectModel = (model) => {
@@ -62,7 +65,7 @@ const InventoryManger = () => {
                 </select>
             </form >
             <div>
-                {!dataloading ? <ItemForm model={selectedModel.name} fullName={selectedModel.fullName} image={selectedModel.image} details={selectedModel.details} /> : null}
+                {!dataloading ? <ItemForm brand={brandName} model={selectedModel.name} fullName={selectedModel.fullName} image={selectedModel.image} details={selectedModel.details} /> : null}
             </div>
         </>
     )

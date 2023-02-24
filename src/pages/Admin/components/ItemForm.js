@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const ItemForm = ({ model, fullName, image, details }) => {
+const ItemForm = ({ brand, model, fullName, image, details }) => {
 
     const [editMode, setEditMode] = useState(false)
     const [formValue, setFormValue] = useState(null)
@@ -40,9 +40,11 @@ const ItemForm = ({ model, fullName, image, details }) => {
             fullName: fullName,
             price: price,
             details: details,
-            image: image
+            image: image,
+            brand: brand
         }
-
+        console.log(newShoe);
+        setEditMode(!editMode)
     }
 
 
@@ -62,8 +64,8 @@ const ItemForm = ({ model, fullName, image, details }) => {
                 </ul>
                 {editMode && <ul className='flex-col'>{formValue.details.map((detail, idx) => <input id={`detail${idx}`} defaultValue={detail} key={Math.random()} />)}</ul>}
                 <div className='form-btns'>
-                    <button type='button' onClick={() => { setEditMode(!editMode) }}>EDIT DETAILS</button>
-                    <button type='submit'>ADD ITEM</button>
+                    {!editMode && <button type='button' onClick={() => { setEditMode(!editMode) }}>CONFIRM DETAILS</button>}
+                    {editMode && <button type='submit'>ADD ITEM</button>}
 
                 </div>
             </form>
