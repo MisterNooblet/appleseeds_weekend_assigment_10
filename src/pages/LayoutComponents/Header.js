@@ -24,9 +24,11 @@ const Header = () => {
                         </ul>
                     </nav>
                 </header>
+                <section>
+                    <Outlet />
+                </section>
+                <Footer />
             </main>
-            <Outlet />
-            <Footer />
         </>
     )
 }
