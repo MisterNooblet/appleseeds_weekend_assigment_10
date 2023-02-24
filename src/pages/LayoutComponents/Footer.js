@@ -7,7 +7,7 @@ const Footer = () => {
         <footer>
             <ul>
                 <li>
-                    <h3>Github Repository: <a href='https://github.com/MisterNooblet/appleseeds_weekend_assigment_9'><FaGithubAlt /></a></h3>
+                    <h3>Github Repository: <a href='https://github.com/MisterNooblet/appleseeds_weekend_assigment_10'><FaGithubAlt /></a></h3>
                 </li>
             </ul>
         </footer>
