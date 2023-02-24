@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import invAPI from '../../../utils/InventoryAPI'
 
 const ItemForm = ({ brand, model, fullName, image, details }) => {
 
@@ -43,6 +44,8 @@ const ItemForm = ({ brand, model, fullName, image, details }) => {
             image: image,
             brand: brand
         }
+        let response = invAPI.addItem(newShoe)
+        console.log(response);
         console.log(newShoe);
         setEditMode(!editMode)
     }

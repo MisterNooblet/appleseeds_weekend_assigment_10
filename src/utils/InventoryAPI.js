@@ -21,7 +21,7 @@ const invAPI = {
 
     },
 
-    async getModels(content) {
+    async getModels() {
         try {
             const response = await this.inv.get('/2')
             return response.data
