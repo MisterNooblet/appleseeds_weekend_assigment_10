@@ -6,9 +6,16 @@ import { useState } from 'react';
 
 
 
-
 function App() {
-  const [user, setUser] = useState(true)
+
+  const [user, setUser] = useState(null)
+  const userHistory = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null
+
+  useState(() => {
+    userHistory && setUser((prevUser) => userHistory)
+    //eslint-disable-next-line
+  }, [])
+
 
   const router = createBrowserRouter([
     {
@@ -18,7 +25,7 @@ function App() {
       children: [
         { path: '/', element: <Home /> },
         { path: '/catalog', element: <Catalog /> },
-        { path: '/admin', element: <Admin /> },
+        { path: '/admin', element: user && user.isAdmin ? <Admin /> : <Error404 /> },
         { path: '/login', element: <Login setUser={setUser} /> },
         { path: '/register', element: <Register setUser={setUser} /> },
         { path: '/catalog/:brandName', element: <Brand /> },

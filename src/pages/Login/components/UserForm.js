@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import API from '../../../utils/UsersAPI'
-const UserForm = ({ formType, isLogged, setIsAdmin }) => {
+const UserForm = ({ formType, setUser }) => {
     const navigate = useNavigate()
     const [errors, setErrors] = useState('')
     const name = useRef('')
@@ -14,7 +14,7 @@ const UserForm = ({ formType, isLogged, setIsAdmin }) => {
         if (!isntUnique && password.current.value.length > 5 && name.current.value.length !== 0) {
             API.register({ username: name.current.value, alias: displayName.current.value, password: password.current.value, isAdmin: false })
             handleLogin(e)
-            navigate('/')
+
         } else if (name.current.value.length === 0) {
             setErrors('Please provide a username!')
         } else if (displayName.current.value.length === 0) {
@@ -31,10 +31,9 @@ const UserForm = ({ formType, isLogged, setIsAdmin }) => {
         e.preventDefault()
         const canLogIn = await API.userCanlog(name.current.value, password.current.value)
         if (canLogIn) {
-            isLogged({ username: canLogIn.username, alias: canLogIn.alias })
-            if (canLogIn.isAdmin) {
-                setIsAdmin(true)
-            }
+            localStorage.setItem('user', JSON.stringify({ username: canLogIn.username, alias: canLogIn.alias, isAdmin: canLogIn.isAdmin }))
+            setUser({ username: canLogIn.username, alias: canLogIn.alias, isAdmin: canLogIn.isAdmin })
+            navigate('/')
         } else {
             setErrors('Login failed check your credentials')
         }

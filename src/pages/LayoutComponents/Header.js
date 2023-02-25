@@ -19,7 +19,10 @@ const Header = ({ user, setUser }) => {
                             {user && <li><NavLink to={'admin'}>ADMIN</NavLink></li>}
                             {!user && <li><NavLink to={'login'}>LOGIN</NavLink></li>}
                             {!user && <li><NavLink to={'register'}>REGISTER</NavLink></li>}
-                            {user && <li><NavLink to={'/'} onClick={() => setUser(null)}>LOGOUT</NavLink></li>}
+                            {user && <li><NavLink to={'/'} onClick={() => {
+                                setUser(null)
+                                localStorage.removeItem('user')
+                            }}>LOGOUT</NavLink></li>}
                         </ul>
                     </nav>
                 </header>
