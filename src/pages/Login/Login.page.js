@@ -1,8 +1,12 @@
 import React from 'react'
+import UserForm from './components/UserForm'
 
-const Login = () => {
+
+const Login = ({ isLogged, setIsAdmin }) => {
     return (
-        <div>Login</div>
+        <div>
+            <UserForm formType={'login'} isLogged={isLogged} setIsAdmin={setIsAdmin} />
+        </div>
     )
 }
 
