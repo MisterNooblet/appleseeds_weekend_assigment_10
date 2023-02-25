@@ -16,7 +16,7 @@ const Header = ({ user, setUser }) => {
                             <li>
                                 <NavLink to={'catalog'}>CATALOG</NavLink>
                             </li>
-                            {user && <li><NavLink to={'admin'}>ADMIN</NavLink></li>}
+                            {user && user.isAdmin ? <li><NavLink to={'admin'}>ADMIN</NavLink></li> : null}
                             {!user && <li><NavLink to={'login'}>LOGIN</NavLink></li>}
                             {!user && <li><NavLink to={'register'}>REGISTER</NavLink></li>}
                             {user && <li><NavLink to={'/'} onClick={() => {

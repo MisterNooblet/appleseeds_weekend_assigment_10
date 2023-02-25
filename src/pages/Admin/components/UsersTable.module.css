@@ -1,0 +1,76 @@
+.table_container {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 50vh;
+  color: black;
+}
+div.usertable {
+  border: 1px solid #1c6ea4;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.usertable .divTableCell,
+.divTable.usertable .divTableHead {
+  border: 1px solid #8f8b8b;
+  padding: 3px 2px;
+}
+.divTable.usertable .divTableBody .divTableCell {
+  font-size: 13px;
+}
+
+.divTable.usertable .divTableHeading {
+  background: #1c6ea4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1c6ea4 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #5592bb 0%,
+    #327cad 66%,
+    #1c6ea4 100%
+  );
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1c6ea4 100%);
+  border-bottom: 2px solid #444444;
+}
+.divTable.usertable .divTableHeading .divTableHead {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  border-left: 2px solid #888787;
+}
+.divTable.usertable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+.voted .divTableCell {
+  background: #a6fa96 !important;
+}
+.default {
+  background: #ffd4bb !important;
+}
+.usertable .tableFootStyle {
+  font-size: 14px;
+}
+.usertable .tableFootStyle .links {
+  text-align: right;
+}
+
+/* DivTable.com */
+.divTable {
+  display: table;
+}
+.divTableRow {
+  display: table-row;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+.divTableCell,
+.divTableHead {
+  display: table-cell;
+}
+.divTableHeading {
+  display: table-header-group;
+}
+
+.divTableBody {
+  display: table-row-group;
+}

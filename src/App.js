@@ -4,8 +4,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Admin, Brand, Catalog, Error404, Header, Home, Item, Login, Register } from './pages';
 import { useState } from 'react';
 
-
-
 function App() {
 
   const [user, setUser] = useState(null)
@@ -25,7 +23,7 @@ function App() {
       children: [
         { path: '/', element: <Home /> },
         { path: '/catalog', element: <Catalog /> },
-        { path: '/admin', element: user && user.isAdmin ? <Admin /> : <Error404 /> },
+        { path: '/admin', element: user && user.isAdmin ? <Admin name={user.alias} /> : <Error404 /> },
         { path: '/login', element: <Login setUser={setUser} /> },
         { path: '/register', element: <Register setUser={setUser} /> },
         { path: '/catalog/:brandName', element: <Brand /> },

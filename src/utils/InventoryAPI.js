@@ -62,62 +62,22 @@ const invAPI = {
         }
     },
 
-
-    //////////////
-    async deletePosts() {
-        const allPosts = await this.getPosts()
-        allPosts.forEach(element => {
-            this.posts.delete(`/${element.id}`)
-
-        })
-    },
-
-    async getPosts() {
+    async updateItem(data, id) {
         try {
-            const response = await this.posts.get('/')
-            return response.data
+            const request = await this.inv.put(id, data)
+            return request.data
         } catch (error) {
 
         }
     },
 
-    async userUnique(user) {
+    async deleteItem(id) {
         try {
-            const response = await this.users.get('/', {
-                transformResponse: [
-                    (data) => {
-                        const parsedData = JSON.parse(data)
-                        const result = parsedData.find(users => {
-                            return users.username.toLowerCase() === user.toLowerCase()
-                        })
-                        return result
-                    }
-                ]
-            })
-            return response.data
+            this.inv.delete(id)
         } catch (error) {
 
         }
     },
-
-    async userCanlog(user, password) {
-        try {
-            const response = await this.users.get('/', {
-                transformResponse: [
-                    (data) => {
-                        const parsedData = JSON.parse(data)
-                        const result = parsedData.find(users => {
-                            return users.username.toLowerCase() === user.toLowerCase() && users.password === password
-                        })
-                        return result
-                    }
-                ]
-            })
-            return response.data
-        } catch (error) {
-
-        }
-    }
 
 }
 

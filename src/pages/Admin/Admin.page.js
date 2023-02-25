@@ -3,11 +3,11 @@ import greetUser from '../../utils/Greet'
 import InventoryManger from './components/InventoryManger'
 import UserManager from './components/UserManager'
 
-const Admin = () => {
+const Admin = ({ name }) => {
     const [manage, setManage] = useState(1)
     return (
         <>
-            <h1>{`${greetUser()} 'username' what would you like to do?`}</h1>
+            <h1>{`${greetUser()} ${name} what would you like to do?`}</h1>
             <div>
                 <button onClick={() => { setManage(1) }}>MANAGE INVENTORY</button>
                 <button onClick={() => { setManage(2) }}>MANAGE USERS</button>

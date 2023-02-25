@@ -9,6 +9,11 @@ const userAPI = {
         this.users.post('/', user)
     },
 
+    async getUsers() {
+        const response = await this.users.get()
+        return response.data
+    },
+
     async userUnique(user) {
         try {
             const response = await this.users.get('/', {
@@ -45,6 +50,12 @@ const userAPI = {
         } catch (error) {
 
         }
+    },
+
+    async deleteUser(id) {
+        await this.users.delete(id)
+        const result = this.users.get()
+        return result.data
     }
 
 }

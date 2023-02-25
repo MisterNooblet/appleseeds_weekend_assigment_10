@@ -5,6 +5,7 @@ import invAPI from '../../utils/InventoryAPI';
 
 const Brand = () => {
     let { brandName } = useParams();
+    let showLink = true
     const [items, setItems] = useState(null)
 
 
@@ -20,7 +21,7 @@ const Brand = () => {
     return (
         <>
             <div>{brandName}</div>
-            {items ? items.map(item => { return <ItemCard model={item.model} image={item.image} price={item.price} id={item.id} /> }) : null}
+            {items ? items.map(item => { return <ItemCard model={item.model} image={item.image} key={Math.random()} price={item.price} id={item.id} showLink={showLink} /> }) : null}
         </>
     )
 }
