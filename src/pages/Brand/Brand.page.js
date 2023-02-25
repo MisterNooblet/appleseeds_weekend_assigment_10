@@ -15,6 +15,7 @@ const Brand = () => {
 
     useEffect(() => {
         getData()
+        //eslint-disable-next-line
     }, [])
     return (
         <>

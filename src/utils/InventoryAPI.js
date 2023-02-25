@@ -53,6 +53,14 @@ const invAPI = {
         }
     },
 
+    async getModel(id) {
+        try {
+            const response = await this.inv.get(id)
+            return response.data
+        } catch (error) {
+
+        }
+    },
 
 
     //////////////
