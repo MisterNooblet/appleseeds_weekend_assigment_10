@@ -30,6 +30,32 @@ const invAPI = {
         }
     },
 
+    async getByBrand(brand) {
+        try {
+            const response = await this.inv.get('', {
+                params: { 'brand': brand },
+                transformResponse: [
+                    (data) => {
+                        const parsedData = JSON.parse(data)
+                        console.log(parsedData);
+                        console.log(brand);
+                        const result = parsedData.filter(brandname => {
+                            return brandname.brand === brand
+                        })
+                        return result
+                    }
+                ]
+
+            })
+            return response.data
+        } catch (error) {
+
+        }
+    },
+
+
+
+    //////////////
     async deletePosts() {
         const allPosts = await this.getPosts()
         allPosts.forEach(element => {
