@@ -6,6 +6,7 @@ import Item from './Item/Item.page'
 import Home from './Home/Home.page'
 import Error404 from './404/Error404'
 import Login from './Login/Login.page'
+import Brand from './Brand/Brand.page'
 
 
-export { Header, Footer, Admin, Catalog, Item, Home, Error404, Login }
+export { Header, Footer, Admin, Catalog, Item, Home, Error404, Login, Brand }
