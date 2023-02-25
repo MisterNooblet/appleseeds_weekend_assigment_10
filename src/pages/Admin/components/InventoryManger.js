@@ -24,7 +24,6 @@ const InventoryManger = () => {
             setSelectedBrand((prev) => prev = initialBrand)
             setSelectedModel((prev) => prev = initialBrand[0])
             setBrandName((prev) => prev = resultBrands[0])
-            console.log(selectedModel);
         } catch (error) {
 
         }
