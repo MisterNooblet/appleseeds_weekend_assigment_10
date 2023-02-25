@@ -37,8 +37,6 @@ const invAPI = {
                 transformResponse: [
                     (data) => {
                         const parsedData = JSON.parse(data)
-                        console.log(parsedData);
-                        console.log(brand);
                         const result = parsedData.filter(brandname => {
                             return brandname.brand === brand
                         })

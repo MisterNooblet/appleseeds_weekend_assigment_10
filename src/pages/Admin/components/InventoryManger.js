@@ -23,7 +23,7 @@ const InventoryManger = () => {
             setBrands((prev) => prev = resultBrands)
             setSelectedBrand((prev) => prev = initialBrand)
             setSelectedModel((prev) => prev = initialBrand[0])
-            setBrandName((prev) => prev = resultBrands[0])
+            setBrandName((prev) => prev = resultBrands[0].toLowerCase())
         } catch (error) {
 
         }

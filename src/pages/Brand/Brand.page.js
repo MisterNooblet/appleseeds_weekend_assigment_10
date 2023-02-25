@@ -12,6 +12,7 @@ const Brand = () => {
     const getData = async () => {
         const result = await invAPI.getByBrand(brandName.toLowerCase())
         setItems((prevItems) => prevItems = result)
+        console.log(result);
     }
 
     useEffect(() => {
