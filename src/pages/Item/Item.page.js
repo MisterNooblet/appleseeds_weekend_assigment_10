@@ -54,7 +54,7 @@ const Item = ({ user }) => {
     if (item && !showModal) {
         return (
             <div>
-                <form className='flex-col' onSubmit={(e) => { handleSubmit(e) }}>
+                <form className='item-form' onSubmit={(e) => { handleSubmit(e) }}>
                     <h1>{item.fullName}</h1>
                     {editMode && <input type='text' name='fullName' id='fullName' value={formValue.fullName} onChange={(e) => setFormValue({ ...formValue, fullName: e.target.value })} />}
                     <img src={item.image} alt={item.fullName} />

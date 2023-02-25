@@ -21,7 +21,7 @@ function App() {
       element: <Header user={user} setUser={setUser} />,
       errorElement: <Error404 />,
       children: [
-        { path: '/', element: <Home /> },
+        { path: '/', element: <Home user={user} /> },
         { path: '/catalog', element: <Catalog /> },
         { path: '/admin', element: user && user.isAdmin ? <Admin name={user.alias} /> : <Error404 /> },
         { path: '/login', element: <Login setUser={setUser} /> },

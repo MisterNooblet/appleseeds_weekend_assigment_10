@@ -4,7 +4,7 @@ import BrandCard from './components/BrandCard'
 
 const Catalog = () => {
     return (
-        <div>
+        <div className='catalog-page'>
             {catalogData.map(brand => <BrandCard name={brand.name} image={brand.image} key={Math.random()} />)}
         </div>
 

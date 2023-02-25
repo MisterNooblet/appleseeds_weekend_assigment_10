@@ -1,8 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import greetUser from '../../utils/Greet'
 
-const Home = () => {
+const Home = ({ user }) => {
     return (
-        <div>Home</div>
+        <div className='home-screen'>
+            <h1>{`${greetUser()} ${user ? user.alias : 'user'} what do your feet desire? `}</h1>
+            <Link to={'/catalog'}><button>TO CATALOG</button></Link>
+        </div>
     )
 }
 

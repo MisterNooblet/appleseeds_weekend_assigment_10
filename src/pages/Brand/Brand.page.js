@@ -21,8 +21,10 @@ const Brand = () => {
     }, [])
     return (
         <>
-            <div>{brandName}</div>
-            {items ? items.map(item => { return <ItemCard model={item.model} image={item.image} key={Math.random()} price={item.price} id={item.id} showLink={showLink} /> }) : null}
+            <div className='brand-title'>{brandName}</div>
+            <div className='brand-page'>
+                {items ? items.map(item => { return <ItemCard model={item.model} image={item.image} key={Math.random()} price={item.price} id={item.id} showLink={showLink} /> }) : null}
+            </div>
         </>
     )
 }

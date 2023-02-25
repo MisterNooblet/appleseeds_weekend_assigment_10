@@ -6,7 +6,7 @@ const ItemCard = ({ model, price, image, id, showLink }) => {
     if (showLink) {
         return (
             <Link to={`p/${id}`}>
-                <div>
+                <div className='item-card'>
                     <h1>{model}</h1>
                     <img src={image} alt={model} />
                     <h3>{price}</h3>
@@ -16,7 +16,7 @@ const ItemCard = ({ model, price, image, id, showLink }) => {
     } else {
         return (
 
-            <div>
+            <div className='item-card'>
                 <h1>{model}</h1>
                 <img src={image} alt={model} />
                 <h3>{price}</h3>
