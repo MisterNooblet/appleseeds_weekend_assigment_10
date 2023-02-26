@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import Spinner from '../../components/Spinner';
 import invAPI from '../../utils/InventoryAPI';
 import Modal from './components/Modal';
 
@@ -50,8 +51,9 @@ const Item = ({ user }) => {
         setEditMode(!editMode)
     }
 
-
-    if (item && !showModal) {
+    if (!item) {
+        return <Spinner />
+    } else if (item && !showModal) {
         return (
             <div>
                 <form className='item-form' onSubmit={(e) => { handleSubmit(e) }}>

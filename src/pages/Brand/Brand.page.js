@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemCard from '../../components/ItemCard';
+import Spinner from '../../components/Spinner';
 import invAPI from '../../utils/InventoryAPI';
 
 const Brand = () => {
@@ -23,7 +24,7 @@ const Brand = () => {
         <>
             <div className='brand-title'>{brandName}</div>
             <div className='brand-page'>
-                {items ? items.map(item => { return <ItemCard model={item.model} image={item.image} key={Math.random()} price={item.price} id={item.id} showLink={showLink} /> }) : null}
+                {items ? items.map(item => { return <ItemCard model={item.model} image={item.image} key={Math.random()} price={item.price} id={item.id} showLink={showLink} /> }) : <Spinner />}
             </div>
         </>
     )
