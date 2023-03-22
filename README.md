@@ -1,70 +1,93 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Appleseeds weekend assigment 10 - Shoe Shop
 
-## Available Scripts
+This is a react application with full CRUD functionality , using mockAPI , a user can browse the inventory , while an admin can edit add or remove items from stock.
 
-In the project directory, you can run:
 
-### `npm start`
+## Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://ar-shoe-shop.netlify.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Admin panel providing dynamic management of the shop's inventory adding shoes by category , removing shoes or editing details.
+- Login/Signup functionality.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dependencies
 
-### `npm run eject`
+`axios` `react-icons` `react-router-dom`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Project Development Roadmap
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Functionality:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Basic structure of the application (Folders,Utilities,Pages)
+- Basic user authentication and routing
+- A more complex authentication verification.
+- Admin panel with basic shoe adding Functionality.
+- Basic catalog to display data added from Admin panel.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Design:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Final styling
 
-### Code Splitting
+### Performance:
+- Seperating !DRY functions to global Utilities.
+- Dividing global pattern's to global components
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Documentation:
 
-### Making a Progressive Web App
+- Add readme to the repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## Lessons Learned
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Managing inventory from within the frontend.
 
-### Deployment
+- Building a semi-complex admin panel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Better understanding of CRUD methods
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Authors
+
+- [@MisterNooblet](https://www.github.com/MisterNooblet)
+
+
+## 🚀 About Me
+
+I'm a full stack development student.
+
+
+## Getting Started
+
+To get started with the project, follow these steps:
+
+Clone the repository:
+```bash 
+git clone https://github.com/MisterNooblet/appleseeds_weekend_assigment_10.git
+```
+Install dependencies:
+```bash 
+npm install
+```
+Start the development server: 
+```bash 
+npm start
+```
+The app will be served at http://localhost:3000/.
+
+
+## PS
+
+Feel free to use the code and don't forget to Star ⭐ the repository.
+
